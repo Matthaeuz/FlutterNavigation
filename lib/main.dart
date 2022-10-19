@@ -1,45 +1,15 @@
-// Programmer: Aloysius Matthew A. Beronque
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:prelim/icons.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(
+    title: 'Navigation Basics',
+    home: LoginPage(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -79,23 +49,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     ),
                     // Username Field
-                    TextField(
+                    const TextField(
                       style: TextStyle(height: 1, fontSize: 16),
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         hintText: "Enter username Here",
                         labelText: "Username",
                         isDense: true,
                       ),
                     ),
                     // Password Field
-                    TextField(
+                    const TextField(
                       style: TextStyle(height: 1, fontSize: 16),
                       obscureText: true,
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         hintText: "Enter password Here",
                         labelText: "Password",
                         isDense: true,
-                        
                       ),
                     ),
                     // Login and Sign-up button container
@@ -106,19 +75,28 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: <Widget>[
                           Expanded(
                             flex: 10,
-                            child: ButtonTheme(
-                                minWidth: 100.0,
-                                height: 50.0,
-                                child: OutlinedButton(
-                                  style: OutlinedButton.styleFrom(
-                                    backgroundColor: const Color(0xffFEDC01),
-                                  ),
-                                  child: const Text('Login',
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold)),
-                                  onPressed: () {},
-                                )),
+                            child: GestureDetector(
+                              child: ButtonTheme(
+                                  minWidth: 100.0,
+                                  height: 50.0,
+                                  child: OutlinedButton(
+                                    style: OutlinedButton.styleFrom(
+                                      backgroundColor: const Color(0xffFEDC01),
+                                    ),
+                                    child: const Text('Login',
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontWeight: FontWeight.bold)),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const First()),
+                                      );
+                                    },
+                                  )),
+                            ),
                           ),
                           Expanded(
                             flex: 1,
@@ -190,6 +168,219 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 ))
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class First extends StatelessWidget {
+  const First({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xffCCCCCC),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xff999999),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xff999999),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xffCCCCCC),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            GestureDetector(
+              child: ButtonTheme(
+                  minWidth: 100.0,
+                  height: 50.0,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: const Color(0xffFEDC01),
+                    ),
+                    child: const Text('Login',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Second()),
+                      );
+                    },
+                  )),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Second extends StatelessWidget {
+  const Second({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xffCCCCCC),
+                    ),
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xff999999),
+                    ),
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xffCCCCCC),
+                    ),
+                    height: 100,
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: Container(),
+              flex: 1,
+            ),
+            GestureDetector(
+              child: ButtonTheme(
+                  minWidth: 100.0,
+                  height: 50.0,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: const Color(0xffFEDC01),
+                    ),
+                    child: const Text('Login',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Third()),
+                      );
+                    },
+                  )),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Third extends StatelessWidget {
+  const Third({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xffCCCCCC),
+                    ),
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xff999999),
+                    ),
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xffCCCCCC),
+                    ),
+                    height: 100,
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xffCCCCCC),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 20, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xff999999),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xff999999),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
           ],
         ),
       ),
