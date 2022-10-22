@@ -188,7 +188,6 @@ class HomePage extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.black),
       ),
       backgroundColor: Colors.white,
-      // Menu Selection
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
         child: Column(
@@ -262,7 +261,6 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            // Dinner Specials
             Column(
               children: [
                 Container(
@@ -455,6 +453,219 @@ class HomePage extends StatelessWidget {
                       Navigator.pop(context);
                     },
                   )),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class First extends StatelessWidget {
+  const First({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+        child: Column(
+          children: [
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xffCCCCCC),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xff999999),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xff999999),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xffCCCCCC),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            GestureDetector(
+              child: ButtonTheme(
+                  minWidth: 100.0,
+                  height: 50.0,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: const Color(0xffFEDC01),
+                    ),
+                    child: const Text('Login',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Second()),
+                      );
+                    },
+                  )),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Second extends StatelessWidget {
+  const Second({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xffCCCCCC),
+                    ),
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xff999999),
+                    ),
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xffCCCCCC),
+                    ),
+                    height: 100,
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: Container(),
+              flex: 1,
+            ),
+            GestureDetector(
+              child: ButtonTheme(
+                  minWidth: 100.0,
+                  height: 50.0,
+                  child: OutlinedButton(
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: const Color(0xffFEDC01),
+                    ),
+                    child: const Text('Login',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Third()),
+                      );
+                    },
+                  )),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class Third extends StatelessWidget {
+  const Third({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+        child: Column(
+          children: <Widget>[
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xffCCCCCC),
+                    ),
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xff999999),
+                    ),
+                    height: 100,
+                  ),
+                ),
+                const SizedBox(width: 20),
+                Expanded(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color(0xffCCCCCC),
+                    ),
+                    height: 100,
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xffCCCCCC),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 20, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xff999999),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
+            ),
+            Expanded(
+              child: Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xff999999),
+                  ),
+                  margin: const EdgeInsets.fromLTRB(0, 0, 0, 20)),
             ),
           ],
         ),
